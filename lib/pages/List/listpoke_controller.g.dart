@@ -8,18 +8,18 @@ part of 'listpoke_controller.dart';
 
 // ignore_for_file: non_constant_identifier_names, unnecessary_lambdas, prefer_expression_function_bodies, lines_longer_than_80_chars, avoid_as, avoid_annotating_with_dynamic
 
-mixin _$ListPokemonController on _ListPokemonControllerBase, Store {
+mixin _$PokemonController on _ListPokemonControllerBase, Store {
   final _$pokemonsAtom = Atom(name: '_ListPokemonControllerBase.pokemons');
 
   @override
-  ObservableFuture<List<ListPokemonModel>> get pokemons {
+  ObservableFuture<List<PokemonModel>> get pokemons {
     _$pokemonsAtom.context.enforceReadPolicy(_$pokemonsAtom);
     _$pokemonsAtom.reportObserved();
     return super.pokemons;
   }
 
   @override
-  set pokemons(ObservableFuture<List<ListPokemonModel>> value) {
+  set pokemons(ObservableFuture<List<PokemonModel>> value) {
     _$pokemonsAtom.context.conditionallyRunInAction(() {
       super.pokemons = value;
       _$pokemonsAtom.reportChanged();

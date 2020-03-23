@@ -4,13 +4,14 @@ import 'package:flutter_modular/flutter_modular.dart';
 
 import 'listpoke_controller.dart';
 
+
 class Listpoke extends StatefulWidget {
   @override
   _ListpokeState createState() => _ListpokeState();
 }
 
 class _ListpokeState extends State<Listpoke> {
-  final listPokemonController = Modular.get<ListPokemonController>();
+  final listPokemonController = Modular.get<PokemonController>();
   @override
   Widget build(BuildContext _) {
     // *context not used
