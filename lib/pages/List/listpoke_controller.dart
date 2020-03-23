@@ -12,7 +12,7 @@ abstract class _ListPokemonControllerBase with Store {
   @observable
   ObservableFuture<List<PokemonModel>> pokemons;
 
-  _ListPokemonControllerBase(this.repository) {
+  _ListPokemonControllerBase(this.repository){
     pokemons = repository.getPokemons().asObservable();
   }
 
