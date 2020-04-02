@@ -29,15 +29,6 @@ class _ListpokeState extends State<Listpoke> {
           ),
           centerTitle: true,
           backgroundColor: Colors.green[900],
-          // actions: <Widget>[
-          //   IconButton(
-          //     icon: Icon(
-          //       Icons.exit_to_app,
-          //       color: Colors.white,
-          //     ),
-          //     onPressed: () => {}, // !colocar rota para fechar o app
-          //   )
-          // ],
         ),
         drawer: _buildDrawer(),
         body: Observer(builder: (_) {
@@ -109,7 +100,8 @@ class _ListpokeState extends State<Listpoke> {
         child: Container(
           padding: const EdgeInsets.only(left: 16.0, right: 40),
           decoration: BoxDecoration(
-              color: Colors.white, boxShadow: [BoxShadow(color: Colors.black45)]),
+              color: Colors.white,
+              boxShadow: [BoxShadow(color: Colors.black45)]),
           width: 300,
           child: SafeArea(
             child: SingleChildScrollView(
@@ -131,10 +123,10 @@ class _ListpokeState extends State<Listpoke> {
                     decoration: BoxDecoration(
                         shape: BoxShape.circle,
                         gradient: LinearGradient(
-                            colors: [Colors.orange, Colors.deepOrange])),
+                            colors: [Colors.white, Colors.white])),
                     child: CircleAvatar(
                       radius: 40,
-                      // backgroundImage: CachedNetworkImageProvider(image), // !Colocar imagem de perfil
+                      backgroundImage: AssetImage('lib/shared/assets/profile.png'),
                     ),
                   ),
                   SizedBox(height: 5.0),
@@ -147,7 +139,8 @@ class _ListpokeState extends State<Listpoke> {
                   ),
                   Text(
                     "@DevJoaoLopes",
-                    style: TextStyle(color: Colors.grey.shade800, fontSize: 16.0),
+                    style:
+                        TextStyle(color: Colors.grey.shade800, fontSize: 16.0),
                   ),
                   SizedBox(height: 30.0),
                   _buildRow(Icons.home, "Home"),
@@ -181,7 +174,8 @@ class _ListpokeState extends State<Listpoke> {
   }
 
   Widget _buildRow(IconData icon, String title, {bool showBadge = false}) {
-    final TextStyle tStyle = TextStyle(color: Colors.grey.shade800, fontSize: 16.0);
+    final TextStyle tStyle =
+        TextStyle(color: Colors.grey.shade800, fontSize: 16.0);
     return Container(
       padding: const EdgeInsets.symmetric(vertical: 5.0),
       child: Row(children: [
