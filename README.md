@@ -7,7 +7,16 @@ Pokemon application using the open api https://pokeapi.co/.
 ## Screenshots (*application still under development*)
 
 
-![image info](./lib/shared/docs/ListPokemons.png)
+
+![image info](./lib/shared/docs/home.png)
+
+- *List Pokemons Home page*
+
+
+
+![image info](./lib/shared/docs/drawerMenu.png)
+
+- *Drawer Navigate Menu*
 
 
 ## Architecture
