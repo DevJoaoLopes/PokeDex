@@ -65,7 +65,8 @@ class _ListpokeState extends State<Listpoke> {
                           Padding(
                             padding: EdgeInsets.only(right: 10),
                             child: GestureDetector(
-                              onTap: () => print('clicou'),
+                              onTap: () =>
+                                  print('clicou'), // ! Rota para detalhes
                               child: Container(
                                 width: 100.0,
                                 height: 100.0,
@@ -77,7 +78,8 @@ class _ListpokeState extends State<Listpoke> {
                             ),
                           ),
                           GestureDetector(
-                            onTap: () => print('clicou'),
+                            onTap: () =>
+                                print('clicou'), // ! Rota para detalhes
                             child: Text(
                               list[index].name,
                               style: TextStyle(
@@ -114,7 +116,7 @@ class _ListpokeState extends State<Listpoke> {
                         Icons.power_settings_new,
                         color: Colors.grey.shade800,
                       ),
-                      onPressed: () {},
+                      onPressed: () =>  {}, // ! Colocar rota para fechar o app
                     ),
                   ),
                   Container(
@@ -126,7 +128,8 @@ class _ListpokeState extends State<Listpoke> {
                             colors: [Colors.white, Colors.white])),
                     child: CircleAvatar(
                       radius: 40,
-                      backgroundImage: AssetImage('lib/shared/assets/profile.png'),
+                      backgroundImage:
+                          AssetImage('lib/shared/assets/profile.png'),
                     ),
                   ),
                   SizedBox(height: 5.0),
@@ -143,20 +146,13 @@ class _ListpokeState extends State<Listpoke> {
                         TextStyle(color: Colors.grey.shade800, fontSize: 16.0),
                   ),
                   SizedBox(height: 30.0),
-                  _buildRow(Icons.home, "Home"),
+                  _buildRow(Icons.home, "Home", '/'),
                   _buildDivider(),
-                  _buildRow(Icons.person_pin, "My profile"),
+                  _buildRow(Icons.person_pin, "My profile", ''),
                   _buildDivider(),
-                  _buildRow(Icons.message, "Messages", showBadge: true),
+                  _buildRow(Icons.email, "Contact us", ''),
                   _buildDivider(),
-                  _buildRow(Icons.notifications, "Notifications",
-                      showBadge: true),
-                  _buildDivider(),
-                  _buildRow(Icons.settings, "Settings"),
-                  _buildDivider(),
-                  _buildRow(Icons.email, "Contact us"),
-                  _buildDivider(),
-                  _buildRow(Icons.info_outline, "Help"),
+                  _buildRow(Icons.message, "Messages", '', showBadge: true),
                   _buildDivider(),
                 ],
               ),
@@ -173,46 +169,50 @@ class _ListpokeState extends State<Listpoke> {
     );
   }
 
-  Widget _buildRow(IconData icon, String title, {bool showBadge = false}) {
+  Widget _buildRow(IconData icon, String title, String route, {bool showBadge = false}) {
     final TextStyle tStyle =
         TextStyle(color: Colors.grey.shade800, fontSize: 16.0);
-    return Container(
-      padding: const EdgeInsets.symmetric(vertical: 5.0),
-      child: Row(children: [
-        Icon(
-          icon,
-          color: Colors.grey.shade800,
-        ),
-        SizedBox(width: 10.0),
-        Text(
-          title,
-          style: tStyle,
-        ),
-        Spacer(),
-        if (showBadge)
-          Material(
-            color: Colors.deepOrange,
-            elevation: 5.0,
-            shadowColor: Colors.red,
-            borderRadius: BorderRadius.circular(5.0),
-            child: Container(
-              width: 25,
-              height: 25,
-              alignment: Alignment.center,
-              decoration: BoxDecoration(
-                color: Colors.deepOrange,
-                borderRadius: BorderRadius.circular(5.0),
-              ),
-              child: Text(
-                "10+",
-                style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 12.0,
-                    fontWeight: FontWeight.bold),
-              ),
-            ),
-          )
-      ]),
+    return GestureDetector(
+      onTap: () => route != '' ? Modular.to.pushNamed(route) : null,
+      child: Container(
+        padding: const EdgeInsets.symmetric(vertical: 5.0),
+        child: Row(children: [
+          Icon(
+            icon,
+            color: Colors.grey.shade800,
+          ),
+          SizedBox(width: 10.0),
+          Text(
+            title,
+            style: tStyle,
+          ),
+          Spacer(),
+          showBadge
+              ? (Material(
+                  color: Colors.deepOrange,
+                  elevation: 5.0,
+                  shadowColor: Colors.red,
+                  borderRadius: BorderRadius.circular(5.0),
+                  child: Container(
+                    width: 25,
+                    height: 25,
+                    alignment: Alignment.center,
+                    decoration: BoxDecoration(
+                      color: Colors.deepOrange,
+                      borderRadius: BorderRadius.circular(5.0),
+                    ),
+                    child: Text(
+                      "10+",
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 12.0,
+                          fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                ))
+              : SizedBox.shrink() // * Box vazio
+        ]),
+      ),
     );
   }
 }

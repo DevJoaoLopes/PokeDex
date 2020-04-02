@@ -11,7 +11,7 @@ class AppModule extends MainModule {
   @override
   List<Bind> get binds => [
         Bind((i) => AppController()),
-        Bind((i) => PokemonController(i.get<PokemonRepository>())),
+        Bind((i) => PokemonController(i.get<PokemonRepository>()), singleton: false),
         Bind((i) => PokemonRepository(i.get<Dio>())),
         Bind((i) => Dio()),
       ]; //array de injecao de dependencia
