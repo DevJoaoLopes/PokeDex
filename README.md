@@ -1,14 +1,30 @@
-# PokeApp
+# Flutter Pokemons App
 
-Flutter Project PokeDexAPP for learn and fun !
+Pokemon application using the open api https://pokeapi.co/.
+
+- The purpose of this application is learning in the flutter library.
+
+## Screenshots (*application still under development*)
+
+
+![image info](./lib/shared/docs/ListPokemons.png)
+
+
+## Architecture
+
+- **MVC** Architeture
+
+- **Mobx** lib for state management
+
+- **Modular** lib for control of named routes
 
 ## Getting Started in Flutter
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
 
 For help getting started with Flutter, view our
 [online documentation](https://flutter.dev/docs), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+
+## Developer by
+
+- **João Victor Piga** Developer mobile.
+

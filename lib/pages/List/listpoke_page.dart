@@ -39,10 +39,6 @@ class _ListpokeState extends State<Listpoke> {
             )
           ],
         ),
-        floatingActionButton: FloatingActionButton(
-          onPressed: () => pokemonController.getListPokemons(),
-          child: Icon(Icons.replay),
-        ),
         body: Observer(builder: (_) {
           if (pokemonController.pokemons.error != null) {
             return Center(
@@ -63,27 +59,44 @@ class _ListpokeState extends State<Listpoke> {
           }
 
           var list = pokemonController.pokemons.value;
-          // return Text("Tem dadoss");
           return GridView.count(
+              padding: const EdgeInsets.all(20),
               crossAxisCount: 2,
               scrollDirection: Axis.vertical,
               children: List.generate(list.length, (index) {
-                return Center(
-                    child: Container(
-                  padding: const EdgeInsets.all(10.0),
-                  child: Column(
-                    children: <Widget>[
-                      Image.network(list[index].img),
-                      Text(
-                        list[index].name,
-                        style: TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.green[900]),
-                      ),
-                    ],
-                  ),
-                ));
+                return Container(
+                  child: Card(
+                      margin: EdgeInsets.all(10),
+                      elevation: 10,
+                      child: Column(
+                        children: <Widget>[
+                          Padding(
+                            padding: EdgeInsets.only(right: 10),
+                            child: GestureDetector(
+                              onTap: () => print('clicou'),
+                              child: Container(
+                                width: 100.0,
+                                height: 100.0,
+                                decoration: BoxDecoration(
+                                  color: Colors.transparent,
+                                ),
+                                child: Image.network(list[index].img),
+                              ),
+                            ),
+                          ),
+                          GestureDetector(
+                            onTap: () => print('clicou'),
+                            child: Text(
+                              list[index].name,
+                              style: TextStyle(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.green[900]),
+                            ),
+                          ),
+                        ],
+                      )),
+                );
               }));
         }));
   }

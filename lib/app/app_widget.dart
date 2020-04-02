@@ -13,6 +13,7 @@ class AppWidget extends StatelessWidget {
       title: 'PokeMon App',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
+        brightness: Brightness.light,
         accentColor: Colors.green[900],
         primaryColor: Colors.green[900],
       ),
