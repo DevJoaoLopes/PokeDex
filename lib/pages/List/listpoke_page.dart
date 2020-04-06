@@ -65,8 +65,7 @@ class _ListpokeState extends State<Listpoke> {
                           Padding(
                             padding: EdgeInsets.only(right: 10),
                             child: GestureDetector(
-                              onTap: () =>
-                                  print('clicou'), // ! Rota para detalhes
+                              onTap: () => Modular.to.pushNamed("/details"),
                               child: Container(
                                 width: 100.0,
                                 height: 100.0,
@@ -78,8 +77,7 @@ class _ListpokeState extends State<Listpoke> {
                             ),
                           ),
                           GestureDetector(
-                            onTap: () =>
-                                print('clicou'), // ! Rota para detalhes
+                            onTap: () => Modular.to.pushNamed("/details"),
                             child: Text(
                               list[index].name,
                               style: TextStyle(
@@ -116,7 +114,7 @@ class _ListpokeState extends State<Listpoke> {
                         Icons.power_settings_new,
                         color: Colors.grey.shade800,
                       ),
-                      onPressed: () =>  {}, // ! Colocar rota para fechar o app
+                      onPressed: () => {}, // ! Colocar rota para home
                     ),
                   ),
                   Container(
@@ -148,9 +146,9 @@ class _ListpokeState extends State<Listpoke> {
                   SizedBox(height: 30.0),
                   _buildRow(Icons.home, "Home", '/'),
                   _buildDivider(),
-                  _buildRow(Icons.person_pin, "My profile", ''),
+                  _buildRow(Icons.person_pin, "My profile", '/profile'),
                   _buildDivider(),
-                  _buildRow(Icons.email, "Contact us", ''),
+                  _buildRow(Icons.email, "Contact us", '/contact'),
                   _buildDivider(),
                   _buildRow(Icons.message, "Messages", '', showBadge: true),
                   _buildDivider(),
@@ -169,7 +167,8 @@ class _ListpokeState extends State<Listpoke> {
     );
   }
 
-  Widget _buildRow(IconData icon, String title, String route, {bool showBadge = false}) {
+  Widget _buildRow(IconData icon, String title, String route,
+      {bool showBadge = false}) {
     final TextStyle tStyle =
         TextStyle(color: Colors.grey.shade800, fontSize: 16.0);
     return GestureDetector(

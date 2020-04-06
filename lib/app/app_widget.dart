@@ -17,7 +17,7 @@ class AppWidget extends StatelessWidget {
         accentColor: Colors.green[900],
         primaryColor: Colors.green[900],
       ),
-      initialRoute: '/',
+      initialRoute: '/list', // ! Colocar rota home aqui
       onGenerateRoute: Modular.generateRoute,
     );
   }

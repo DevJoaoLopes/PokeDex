@@ -3,8 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:pokeapp/app/app_controller.dart';
 import 'package:pokeapp/app/app_widget.dart';
+import 'package:pokeapp/pages/Contact/contact_page.dart';
+import 'package:pokeapp/pages/Details/details_page.dart';
 import 'package:pokeapp/pages/List/listpoke_controller.dart';
 import 'package:pokeapp/pages/List/listpoke_page.dart';
+import 'package:pokeapp/pages/Profile/profile_page.dart';
 import 'package:pokeapp/shared/repositories/pokemon_repository.dart';
 
 class AppModule extends MainModule {
@@ -18,7 +21,11 @@ class AppModule extends MainModule {
 
   @override
   List<Router> get routers => [
-        Router('/', child: (_, args) => Listpoke()),
+        // !Criar rota home aqui
+        Router('/list', child: (_, args) => Listpoke()),
+        Router('/details', child: (_, args) => Details()),
+        Router('/profile', child: (_, args) => Profile()),
+        Router('/contact', child: (_, args) => Contact()),
       ]; //pages routes
 
   @override
