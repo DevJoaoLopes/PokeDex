@@ -7,10 +7,15 @@ Pokemon application using the open api https://pokeapi.co/.
 ## Screenshots (*application still under development*)
 
 
-
 ![image info](./lib/shared/docs/home.png)
 
-- *List Pokemons Home page*
+- *Home page*
+
+
+
+![image info](./lib/shared/docs/list.png)
+
+- *List Pokemons page*
 
 
 
@@ -26,6 +31,8 @@ Pokemon application using the open api https://pokeapi.co/.
 - **Mobx** lib for state management
 
 - **Modular** lib for control of named routes
+
+- **Slidy** lib for automated commands
 
 ## Getting Started in Flutter
 

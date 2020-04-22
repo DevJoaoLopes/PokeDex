@@ -93,6 +93,8 @@ class _ListpokeState extends State<Listpoke> {
         }));
   }
 
+
+  // *Drawer Widget Code
   _buildDrawer() {
     return ClipPath(
       clipper: OvalRightBorderClipper(),
@@ -114,7 +116,7 @@ class _ListpokeState extends State<Listpoke> {
                         Icons.power_settings_new,
                         color: Colors.grey.shade800,
                       ),
-                      onPressed: () => {}, // ! Colocar rota para home
+                      onPressed: () => Modular.to.pushNamed("/home"),
                     ),
                   ),
                   Container(
@@ -144,7 +146,7 @@ class _ListpokeState extends State<Listpoke> {
                         TextStyle(color: Colors.grey.shade800, fontSize: 16.0),
                   ),
                   SizedBox(height: 30.0),
-                  _buildRow(Icons.home, "Home", '/'),
+                  _buildRow(Icons.home, "Home", '/home'),
                   _buildDivider(),
                   _buildRow(Icons.person_pin, "My profile", '/profile'),
                   _buildDivider(),
