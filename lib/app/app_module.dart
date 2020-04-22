@@ -5,6 +5,7 @@ import 'package:pokeapp/app/app_controller.dart';
 import 'package:pokeapp/app/app_widget.dart';
 import 'package:pokeapp/pages/Contact/contact_page.dart';
 import 'package:pokeapp/pages/Details/details_page.dart';
+import 'package:pokeapp/pages/Home/home_page.dart';
 import 'package:pokeapp/pages/List/listpoke_controller.dart';
 import 'package:pokeapp/pages/List/listpoke_page.dart';
 import 'package:pokeapp/pages/Profile/profile_page.dart';
@@ -21,8 +22,7 @@ class AppModule extends MainModule {
 
   @override
   List<Router> get routers => [
-        // !Criar rota home aqui
-        Router('/home', child: (_, args) => Listpoke()),
+        Router('/home', child: (_, args) => HomePage()),
         Router('/list', child: (_, args) => Listpoke()),
         Router('/details', child: (_, args) => Details()),
         Router('/profile', child: (_, args) => Profile()),
