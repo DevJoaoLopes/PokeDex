@@ -22,6 +22,7 @@ class AppModule extends MainModule {
   @override
   List<Router> get routers => [
         // !Criar rota home aqui
+        Router('/home', child: (_, args) => Listpoke()),
         Router('/list', child: (_, args) => Listpoke()),
         Router('/details', child: (_, args) => Details()),
         Router('/profile', child: (_, args) => Profile()),
