@@ -15,8 +15,6 @@ class PokemonRepository {
     for (var json in (response1.data['results'] as List)) {
       var response2 = await dio.get(json['url']);
       for (var json2 in (response2.data['forms'] as List)) {
-        print(json['name']); // !Tirar print
-        print(response2.data['sprites']['front_shiny']); // !Tirar print
         PokemonModel model = PokemonModel(
           name: json2['name'],
           img: response2.data['sprites']['front_shiny'],
