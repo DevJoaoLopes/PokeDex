@@ -1,5 +1,10 @@
 # Flutter Pokemons App
 
+[![GitHub issues](https://img.shields.io/github/issues/DevJoaoLopes/PokeDex)](https://github.com/DevJoaoLopes/PokeDex/issues)
+[![GitHub forks](https://img.shields.io/github/forks/DevJoaoLopes/PokeDex)](https://github.com/DevJoaoLopes/PokeDex/network)
+[![GitHub stars](https://img.shields.io/github/stars/DevJoaoLopes/PokeDex)](https://github.com/DevJoaoLopes/PokeDex/stargazers)
+[![GitHub license](https://img.shields.io/github/license/DevJoaoLopes/PokeDex)](https://github.com/DevJoaoLopes/PokeDex)
+
 Pokemon application using the open api https://pokeapi.co/.
 
 - The purpose of this application is learning in the flutter library.
